@@ -9,15 +9,8 @@ const handle = app.getRequestHandler()
 app
     .prepare()
     .then(() => {
-  const server = express()
-  const thanhtoan = require("./routes.js");
-
-  server.use("/", thanhtoan);
-//Tạo ra các router. Dòng này có ý nghĩa khi gửi request đến path /a . Sẽ render file /a.js trong thư mục pages/a.js của Nextjs
-
-
-// Nếu các bạn muốn các routing tự động liến kết đến route files giống với cấu trúc của Nextjs thì chỉ cần thêm 3 dòng bên dưới
-// https://nextjs.org/docs/routing/introduction
+  const server = express();
+  
   server.all('*', (req, res) => {
     return handle(req, res)
   })

@@ -1,6 +1,6 @@
 
 // import moment from 'moment';
-var config = require("../frontend/config/config.json");
+var config = require("./config/config.json");
 var express = require('express');
 var router = express.Router();
 var dateFormat = require('dateformat');
